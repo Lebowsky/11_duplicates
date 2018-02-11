@@ -1,9 +1,10 @@
 import os
+import sys
 from collections import Counter
-from pprint import pprint
 
 
 def get_duplicate_files(path):
+
     dict_files = {}
     counter = Counter()
     for path_dir, directories, files in os.walk(path):
@@ -21,10 +22,14 @@ def get_duplicate_files(path):
     return duplicates
 
 
-
 if __name__ == '__main__':
-    path = 'D:/temp'
+    if len(sys.argv) < 2:
+        print('You can use: $ python duplcates.py <path to find duplicates>')
+        exit(-1)
+    path = sys.argv[1]
     duplicates = get_duplicate_files(path)
-    for el in duplicates:
-        print(el)
 
+    for file_duplicate in duplicates:
+        for path_to_file in file_duplicate:
+            print(path_to_file)
+        print()

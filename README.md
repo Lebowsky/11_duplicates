@@ -1,6 +1,17 @@
 # Anti-Duplicator
 
-[TODO. There will be project description]
+The script searches for duplicate files by the same name and size and displays the full path to the files in the console
+
+#How to use
+
+The script requires the installed Python interpreter version 3.5
+
+Running on Linux:
+
+$ python duplicates.py <path to find duplicates>
+
+
+Running on Windows is similar.
 
 # Project Goals
 
